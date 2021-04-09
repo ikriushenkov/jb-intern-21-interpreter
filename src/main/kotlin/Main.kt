@@ -1,5 +1,7 @@
 fun main() {
     val parse = Parser.Companion::evaluate
 
-    println(parse(readLine() ?: error("Enter program")))
+    val code = generateSequence(::readLine).joinToString("\n")
+
+    println(parse(code))
 }

@@ -66,6 +66,7 @@ class ParserTest {
     @Test
     fun testFunction() {
         assertEquals(10, parse("f(x)={x}\nf(10)"))
+        assertEquals(42, parse("f(x)={g((x-1))}\ng(x)={[(x>0)]?{f((x-1))}:{42}}\nf(10)"))
         val fibCode = "fib(n)={[(n>1)]?{(fib((n-1))+fib((n-2)))}:{1}}\n"
         fun fib(n: Int): Int {
             return if (n > 1) {
