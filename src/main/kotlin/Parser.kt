@@ -161,7 +161,7 @@ class Parser private constructor(string: String) {
 
         val functionDefinitionList = emptyList<FunctionDefinition>().toMutableList()
 
-        while (lines-- > 0 ) {
+        while (lines-- > 0) {
             functionDefinitionList += parseFunctionDefinition()
             line++
         }

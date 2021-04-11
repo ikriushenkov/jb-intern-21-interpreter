@@ -11,9 +11,13 @@ class ParserTest {
         assertEquals(4, parse("(2+2)"))
         assertEquals(4, parse("(2+((3*4)/5))"))
         assertEquals(0, parse("[((10+20)>(20+10))]?{1}:{0}"))
-        assertEquals(60, parse("g(x)={(f(x)+f((x/2)))}\n" +
-                                        "f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}\n" +
-                                        "g(10)"))
+        assertEquals(
+            60, parse(
+                "g(x)={(f(x)+f((x/2)))}\n" +
+                        "f(x)={[(x>1)]?{(f((x-1))+f((x-2)))}:{x}}\n" +
+                        "g(10)"
+            )
+        )
         val syntaxException = assertFailsWith<SyntaxException> { parse("1 + 2 + 3 + 4 + 5") }
         assertEquals("SYNTAX ERROR", syntaxException.message)
         val parameterNotFoundException = assertFailsWith<ParameterNotFountException> { parse("f(x)={y}\nf(10)") }
@@ -28,7 +32,7 @@ class ParserTest {
 
     @Test
     fun testEmpty() {
-        assertFailsWith<SyntaxException>{ parse("") }
+        assertFailsWith<SyntaxException> { parse("") }
     }
 
     @Test

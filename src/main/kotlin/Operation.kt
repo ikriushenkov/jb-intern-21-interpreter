@@ -1,6 +1,6 @@
 import exceptions.SyntaxException
 
-enum class Operation(val char: Char)  {
+enum class Operation(val char: Char) {
     PLUS('+') {
         override fun apply(a: Int, b: Int): Int {
             return a + b
@@ -41,7 +41,8 @@ enum class Operation(val char: Char)  {
             return boolToInt(a == b)
         }
     };
-    abstract fun apply(a : Int, b : Int): Int
+
+    abstract fun apply(a: Int, b: Int): Int
 
     companion object {
         private fun boolToInt(bool: Boolean): Int {
@@ -50,7 +51,7 @@ enum class Operation(val char: Char)  {
 
         private val operations = values().associateBy { it.char }
 
-        fun createFromChar(char : Char): Operation {
+        fun createFromChar(char: Char): Operation {
             return operations[char] ?: throw SyntaxException()
         }
     }

@@ -9,7 +9,7 @@ class Digit(private val value: Char) {
         }
     }
 
-    fun getInt() : Int {
+    fun getInt(): Int {
         return value - '0'
     }
 }

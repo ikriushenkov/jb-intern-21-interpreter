@@ -2,7 +2,7 @@ package expression
 
 import exceptions.SyntaxException
 
-class Character(val char : Char) {
+class Character(val char: Char) {
     init {
         if (!isCharacter(char)) {
             throw SyntaxException()

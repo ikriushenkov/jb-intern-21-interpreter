@@ -1,3 +1,3 @@
 package exceptions
 
-class SyntaxException: ParseException("SYNTAX ERROR")
+class SyntaxException : ParseException("SYNTAX ERROR")

@@ -1,4 +1,6 @@
-import expression.Identifier
+package expression
+
+import FunctionDefinition
 
 interface Expression {
     val line: Int

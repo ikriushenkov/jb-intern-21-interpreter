@@ -1,3 +1,3 @@
 package exceptions
 
-open class ParseException(string: String): Exception(string)
+open class ParseException(string: String) : Exception(string)
